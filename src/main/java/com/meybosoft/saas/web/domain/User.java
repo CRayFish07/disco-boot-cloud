@@ -7,6 +7,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * @intro 模型抽取一个父类出来
+ * @version 1.0
+ * @author lengyu
+ * @since 2017年3月18日 下午9:38:47
+ */
 @Entity
 @Table(name = "Disco_User")
 public class User {

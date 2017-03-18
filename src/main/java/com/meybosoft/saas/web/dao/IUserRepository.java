@@ -1,8 +1,8 @@
 package com.meybosoft.saas.web.dao;
 
-import com.meybosoft.saas.web.domain.User;
+import org.disco.boot.platform.dao.BaseRepository;
 
-import cn.org.disco.boot.platform.dao.BaseRepository;
+import com.meybosoft.saas.web.domain.User;
 
 public interface IUserRepository extends BaseRepository<User, Long> {
 
