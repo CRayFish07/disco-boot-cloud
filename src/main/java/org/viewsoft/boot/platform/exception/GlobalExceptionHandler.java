@@ -1,7 +1,5 @@
 package org.viewsoft.boot.platform.exception;
 
-import org.springframework.web.bind.annotation.ControllerAdvice;
-
 /**
  * @intro 全局异常处理,实现error.html页面展示：在templates目录下创建error.html，将请求的URL和Exception对象的message输出。
  *        <br />
@@ -11,5 +9,5 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
  * @author lengyu
  * @since 2017年3月1日 下午5:24:46
  */
-@ControllerAdvice
+//@ControllerAdvice
 class GlobalExceptionHandler {}

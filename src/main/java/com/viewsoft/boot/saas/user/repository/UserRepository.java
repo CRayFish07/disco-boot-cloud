@@ -1,6 +1,6 @@
-package com.viewsoft.boot.saas.user.dao;
+package com.viewsoft.boot.saas.user.repository;
 
-import org.viewsoft.boot.platform.dao.BaseRepository;
+import org.viewsoft.boot.platform.repository.BaseRepository;
 
 import com.viewsoft.boot.saas.user.domain.User;
 

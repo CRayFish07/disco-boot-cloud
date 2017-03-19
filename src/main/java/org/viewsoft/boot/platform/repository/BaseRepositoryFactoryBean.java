@@ -1,4 +1,4 @@
-package org.viewsoft.boot.platform.dao;
+package org.viewsoft.boot.platform.repository;
 
 import java.io.Serializable;
 

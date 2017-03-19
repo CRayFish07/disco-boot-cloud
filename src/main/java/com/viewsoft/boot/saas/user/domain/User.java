@@ -14,7 +14,7 @@ import javax.persistence.Table;
  * @since 2017年3月18日 下午9:38:47
  */
 @Entity
-@Table(name = "Disco_User")
+@Table(name = "ViewSoft_User")
 public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
