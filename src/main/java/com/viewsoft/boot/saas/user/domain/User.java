@@ -1,4 +1,4 @@
-package com.meybosoft.saas.web.domain;
+package com.viewsoft.boot.saas.user.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
