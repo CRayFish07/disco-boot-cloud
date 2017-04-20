@@ -1,4 +1,4 @@
-package com.viewsoft.boot.saas.user;
+package com.viewsoft.boot.saas.user.ctrl;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;

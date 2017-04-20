@@ -1,7 +1,6 @@
 package org.viewsoft.boot.platform.repository;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -9,7 +8,7 @@ import javax.persistence.EntityManager;
 import org.springframework.data.jpa.repository.support.SimpleJpaRepository;
 
 /**
- * @intro 
+ * @intro
  * @version 1.0
  * @author lengyu
  * @since 2017年3月17日 上午10:47:51
@@ -28,10 +27,8 @@ public class BaseRepositoryImpl<T, ID extends Serializable> extends SimpleJpaRep
 	// 通过EntityManager来完成查询
 	@Override
 	@SuppressWarnings("unchecked")
-	public <X extends Object> List<X> listBySQL(String sql, X x) {
-		List<X> list = new ArrayList<X>();
-		list.addAll(entityManager.createNativeQuery(sql).getResultList());
-		return list;
+	public <X> List<X> listBySQL(String sql, X x) {
+		return entityManager.createNativeQuery(sql, x.getClass()).getResultList();
 	}
 
 }

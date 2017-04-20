@@ -6,6 +6,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 
 /**
  * @intro 模型抽取一个父类出来
@@ -21,6 +24,7 @@ public class User {
 	private Long id;
 
 	@Column(nullable = false)
+	@NotNull
 	private String name;
 
 	@Column(nullable = false)

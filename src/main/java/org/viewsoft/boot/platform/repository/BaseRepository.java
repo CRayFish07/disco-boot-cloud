@@ -24,6 +24,6 @@ public interface BaseRepository<T, ID extends Serializable> extends JpaRepositor
 	 *            一个泛型参数，指定返回类型
 	 * @return 返回值
 	 */
-	<X extends Object> List<X> listBySQL(String sql, X x);
+	<X> List<X> listBySQL(String sql, X x);
 
 }

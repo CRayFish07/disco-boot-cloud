@@ -1,4 +1,4 @@
-package org.viewsoft.boot.platform.autoconfigure;
+package org.viewsoft.boot.platform.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

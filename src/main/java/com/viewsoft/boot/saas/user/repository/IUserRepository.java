@@ -4,6 +4,6 @@ import org.viewsoft.boot.platform.repository.BaseRepository;
 
 import com.viewsoft.boot.saas.user.domain.User;
 
-public interface UserRepository extends BaseRepository<User, Long> {
+public interface IUserRepository extends BaseRepository<User, Long> {
 
 }
