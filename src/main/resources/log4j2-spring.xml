@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- status的值用于配置log4j2自身内部的信息输出 -->
+<Configuration status="WARN">
+	<Appenders>
+		<Console name="Console" target="SYSTEM_OUT" follow="true">
+			<!-- pattern用于格式化日志显示格式 -->
+			<PatternLayout>
+				<pattern>%d %p %C{1.} [%t] %m%n</pattern>
+			</PatternLayout>
+		</Console>
+		<!-- 按日期每天生成log文件,新生成的文件放在filePattern指定的目录下 -->
+		<RollingFile name="RollingFile" fileName="dist/log/CL_BATCH.log"
+			filePattern="dist/log/CL_BATCH-%d{yyyy-MM-dd}.log">
+			<PatternLayout pattern="%d %p %C{1.} [%t] %m%n" />
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1" />
+			</Policies>
+			<!-- DefaultRolloverStrategy属性如不设置，则默认为最多同一文件夹下7个文件，这里设置了100 -->
+			<DefaultRolloverStrategy max="100" />
+
+			<!-- log文件只打印error级别信息 -->
+			<Filters>
+				<ThresholdFilter level="error" onMatch="ACCEPT"
+					onMismatch="DENY" />
+			</Filters>
+		</RollingFile>
+	</Appenders>
+	<Loggers>
+		<!-- 输出warn级别信息,分别输出在控制台及磁盘文件中 -->
+		<Root level="warn">
+			<AppenderRef ref="Console" />
+			<AppenderRef ref="RollingFile" />
+		</Root>
+	</Loggers>
+</Configuration>
+
+<!-- %m：输出代码中指定的消息。      -->
+<!-- %p：输出优先级。      -->
+<!-- %r：输入自应用启动到输出该log信息耗费的毫秒数。      -->
+<!-- %c：输出所属的类目，通常就是所在类的全名。      -->
+<!-- %n：输出一个回车换行符。Windows平台为“\r\n”，UNIX为“\n”。      -->
+<!-- %d：输出日志时间点的日期或时间，默认格式为ISO8601，推荐使用“%d{ABSOLUTE}”，这个输出格式形如：“2007-05-07 18:23:23,500”，符合中国人习惯。      -->
+<!-- %l：输出日志事件发生的位置，包括类名、线程名，以及所在代码的行数。     -->
+<!-- %m：输出代码中指定的消息。   -->
+<!-- %c：输出所属的类目，通常就是所在类的全名。   -->
+<!-- %t：输出产生该日志线程的线程名。   -->
+<!-- %n：输出一个回车换行符。Windows平台为“\r\n”，UNIX为“\n”。   -->
+<!-- %d：输出日志时间点的日期或时间，默认格式为ISO8601，推荐使用“%d{ABSOLUTE}”，这个输出格式形如：“2007-05-07 18:23:23,500”，符合中国人习惯。   -->
+<!-- %l：输出日志事件发生的位置，包括类名、线程名，以及所在代码的行数。   -->
+<!-- %d 输出日志时间点的日期或时间，默认格式为ISO8601，也可以在其后指定格式，比如：%d{yyy-MM-dd HH:mm:ss }，输出类似：2002-10-18- 22：10：28   -->
+<!-- %f 输出日志信息所属的类的类名   -->
+<!-- %l 输出日志事件的发生位置，即输出日志信息的语句处于它所在的类的第几行   -->
+<!-- %m 输出代码中指定的信息，如log(message)中的message   -->
+<!-- %p 输出优先级，即DEBUG，INFO，WARN，ERROR，FATAL。如果是调用debug()输出的，则为DEBUG，依此类推   -->
+<!-- %r 输出自应用启动到输出该日志信息所耗费的毫秒数   -->
+<!-- %t 输出产生该日志事件的线程名 -->

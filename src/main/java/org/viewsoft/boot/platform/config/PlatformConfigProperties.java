@@ -9,7 +9,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  * @since 2017年3月19日 下午10:34:39
  */
 @ConfigurationProperties(prefix = "disco")
-public class ConfigProperties {
+public class PlatformConfigProperties {
 	private String[] allPackageScan = {};
 	private String[] jpaPackageScan = {};
 	private String[] springPackageScan = {};
